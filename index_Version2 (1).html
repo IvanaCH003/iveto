@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Покана за абитуриентски бал — Ивайла</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="overlay"></div>
+      <img class="cover" src="cover.jpg" alt="Покана фоново изображение — смени с реална снимка (cover.jpg)">
+      <div class="hero-content">
+        <h1 class="title">Покана</h1>
+        <p class="subtitle">за абитуриентския бал на</p>
+        <h2 class="name">Ивайла</h2>
+        <p class="date">Дата: <strong>09.06.2026</strong> · Час: <strong>{{TIME}}</strong></p>
+        <p class="venue">Място: <strong>{{VENUE}}</strong></p>
+        <div class="actions">
+          <button id="rsvpBtn" class="btn primary">Потвърдете присъствие</button>
+          <a class="btn ghost" href="tel:+359{{CONTACT_PHONE}}">Позвъни</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="details">
+      <h3>Детайли</h3>
+      <p>Ще се радваме да споделите този специален момент с нас. В програмата: поздравления, вечеря и танци. Моля, потвърдете присъствието си най-късно до <strong>{{RSVP_DEADLINE}}</strong>.</p>
+      <ul class="info-list">
+        <li><strong>Дрескод:</strong> Официално / Вечерни рокли</li>
+        <li><strong>Контакт:</strong> <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>С обич, семейството на <strong>Ивайла</strong></p>
+      <p class="small">Ако имате въпроси — пишете на <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+    </footer>
+  </main>
+
+  <!-- RSVP Modal -->
+  <div id="rsvpModal" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="closeModal" aria-label="Затвори">&times;</button>
+      <h3>Потвърдете присъствие</h3>
+      <form id="rsvpForm">
+        <label>Вашето име
+          <input type="text" name="guestName" placeholder="Име и фамилия" required>
+        </label>
+        <label>Имейл
+          <input type="email" name="guestEmail" placeholder="име@пример.com" required>
+        </label>
+        <label>Брой гости
+          <input type="number" name="guests" min="1" max="10" value="1" required>
+        </label>
+        <label>Съобщение (по избор)
+          <textarea name="message" placeholder="Поздрав..."></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="submit" class="btn primary">Изпрати потвърждение</button>
+          <button type="button" class="btn ghost" id="cancelBtn">Откажи</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
